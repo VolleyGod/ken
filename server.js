@@ -62,8 +62,7 @@ const commands = {
 		});
 	},
   'search': (msg) => {
-		
-var fs = require('fs');
+		var fs = require('fs');
 var readline = require('readline');
 var google = require('googleapis');
 var googleAuth = require('google-auth-library');
@@ -83,9 +82,9 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   }
   // Authorize a client with the loaded credentials, then call the YouTube API.
   //See full code sample for authorize() function code.
-authorize(JSON.parse(content), {'params': {'maxResults': '1',
+authorize(JSON.parse(content), {'params': {'maxResults': '25',
                  'part': 'snippet',
-                 'q': `${msg.content.slice(tokens.prefix.length).trim(6).split(/ +/g)}`,
+                 'q': 'surfing',
                  'type': ''}}, searchListByKeyword);
 
 });
@@ -230,10 +229,10 @@ function searchListByKeyword(auth, requestData) {
       console.log('The API returned an error: ' + err);
       return;
     }
-    msg.channel.send(response);
+    console.log(response);
   });
 }
-	},
+  },
 	'add': (msg) => {
 		let url = msg.content.split(' ')[1];
 		if (url == '' || url === undefined) return msg.channel.sendMessage(`You must add a YouTube video url, or id after ${tokens.prefix}add`);
