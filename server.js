@@ -85,7 +85,7 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   //See full code sample for authorize() function code.
 authorize(JSON.parse(content), {'params': {'maxResults': '1',
                  'part': 'snippet',
-                 'q': `${msg.content}`,
+                 'q': `${msg.content.slice(tokens.prefix.length).trim(6).split(/ +/g)}`,
                  'type': ''}}, searchListByKeyword);
 
 });
