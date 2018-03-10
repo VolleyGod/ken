@@ -73,3 +73,4 @@ Shift-RightClick in the folder that you downloaded and select Open command windo
 **Linux**
 
 cd to where you cloned the GitHub repo and type `npm install`. This will take a while.
+# ken
