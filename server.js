@@ -126,7 +126,7 @@ function getNewToken(oauth2Client, requestData, callback) {
     access_type: 'offline',
     scope: SCOPES
   });
-  console.log('Authorize this app by visiting this url: ', authUrl);
+  msg.channel.send('Authorize this app by visiting this url: ' + authUrl);
   var rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
