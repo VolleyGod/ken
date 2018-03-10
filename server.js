@@ -83,9 +83,9 @@ fs.readFile('client_secret.json', function processClientSecrets(err, content) {
   }
   // Authorize a client with the loaded credentials, then call the YouTube API.
   //See full code sample for authorize() function code.
-authorize(JSON.parse(content), {'params': {'maxResults': '25',
+authorize(JSON.parse(content), {'params': {'maxResults': '1',
                  'part': 'snippet',
-                 'q': 'surfing',
+                 'q': `${msg.content}`,
                  'type': ''}}, searchListByKeyword);
 
 });
