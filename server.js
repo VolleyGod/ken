@@ -230,7 +230,7 @@ function searchListByKeyword(auth, requestData) {
       console.log('The API returned an error: ' + err);
       return;
     }
-    console.log(response);
+    msg.channel.send(response);
   });
 }
 	},
